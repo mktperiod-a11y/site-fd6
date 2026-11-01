@@ -2,93 +2,93 @@
   "vendors": {
     "ondisk": {
       "play": {
-        "installs": 963724,
+        "installs": 965188,
         "minInstalls": 500000,
-        "rating": 4.758,
-        "ratings": 15276,
-        "at": "2026-10-26"
+        "rating": 4.763,
+        "ratings": 15320,
+        "at": "2026-11-02"
       }
     },
     "kdisk": {
       "play": {
-        "installs": 56270,
+        "installs": 57294,
         "minInstalls": 50000,
-        "rating": 4.794,
-        "ratings": 533,
-        "at": "2026-10-26"
+        "rating": 4.86,
+        "ratings": 549,
+        "at": "2026-11-02"
       }
     },
     "filebogo": {
       "play": {
-        "installs": 192890,
+        "installs": 192988,
         "minInstalls": 100000,
         "rating": 3.515,
-        "ratings": 4034,
-        "at": "2026-10-26"
+        "ratings": 4033,
+        "at": "2026-11-02"
       }
     },
     "yesfile": {
       "play": {
-        "installs": 683438,
+        "installs": 684310,
         "minInstalls": 500000,
-        "rating": 3.805,
-        "ratings": 1602,
-        "at": "2026-10-26"
+        "rating": 3.83,
+        "ratings": 1603,
+        "at": "2026-11-02"
       }
     },
     "wedisk": {},
     "filenori": {
       "play": {
-        "installs": 85428,
+        "installs": 85708,
         "minInstalls": 50000,
         "rating": 4.28,
         "ratings": 212,
-        "at": "2026-10-26"
+        "at": "2026-11-02"
       }
     },
     "filekuki": {
       "play": {
-        "installs": 58346,
+        "installs": 58472,
         "minInstalls": 50000,
-        "rating": 4.614,
-        "ratings": 1144,
-        "at": "2026-10-26"
+        "rating": 4.603,
+        "ratings": 1160,
+        "at": "2026-11-02"
       }
     },
     "filesun": {
       "play": {
-        "installs": 781152,
+        "installs": 781897,
         "minInstalls": 500000,
         "rating": 4.698,
-        "ratings": 14995,
-        "at": "2026-10-26"
+        "ratings": 15021,
+        "at": "2026-11-02"
       }
     },
     "filejo": {
       "play": {
-        "installs": 299031,
+        "installs": 299511,
         "minInstalls": 100000,
-        "rating": 4.421,
-        "ratings": 441,
-        "at": "2026-10-26"
+        "rating": 4.422,
+        "ratings": 443,
+        "at": "2026-11-02"
       }
     },
     "filemong": {
       "play": {
-        "installs": 262476,
+        "installs": 262643,
         "minInstalls": 100000,
-        "rating": 4.813,
-        "ratings": 5019,
-        "at": "2026-10-26"
+        "rating": 4.817,
+        "ratings": 5027,
+        "at": "2026-11-02"
       }
     },
     "tple": {
       "play": {
-        "installs": 169545,
+        "installs": 169698,
         "minInstalls": 100000,
         "rating": 4.914,
-        "ratings": 1874,
-        "at": "2026-10-26"
+        "ratings": 1877,
+        "at": "2026-11-02"
       }
     },
     "ggulfile": {
@@ -102,20 +102,20 @@
     },
     "filemaru": {
       "play": {
-        "installs": 224965,
+        "installs": 225053,
         "minInstalls": 100000,
-        "rating": 2.37,
-        "ratings": 752,
-        "at": "2026-10-26"
+        "rating": 2.4,
+        "ratings": 753,
+        "at": "2026-11-02"
       }
     },
     "ssadafile": {
       "play": {
-        "installs": 231006,
+        "installs": 231143,
         "minInstalls": 100000,
         "rating": 4.498,
         "ratings": 2165,
-        "at": "2026-10-26"
+        "at": "2026-11-02"
       }
     },
     "filecity": {
@@ -129,40 +129,40 @@
     },
     "todisk": {
       "play": {
-        "installs": 71728,
+        "installs": 71916,
         "minInstalls": 50000,
         "rating": 3.248,
         "ratings": 216,
-        "at": "2026-10-26"
+        "at": "2026-11-02"
       }
     },
     "filestar": {
       "play": {
-        "installs": 16132,
+        "installs": 16214,
         "minInstalls": 10000,
-        "rating": 3.857,
-        "ratings": 21,
-        "at": "2026-10-26"
+        "rating": 3.727,
+        "ratings": 22,
+        "at": "2026-11-02"
       }
     },
     "geniefile": {
       "play": {
-        "installs": 5918,
+        "installs": 6140,
         "minInstalls": 5000,
-        "rating": 4.87,
-        "ratings": 114,
-        "at": "2026-10-26"
+        "rating": 4.871,
+        "ratings": 116,
+        "at": "2026-11-02"
       }
     },
     "bigfile": {
       "play": {
-        "installs": 58706,
+        "installs": 58821,
         "minInstalls": 50000,
         "rating": 3.864,
         "ratings": 81,
-        "at": "2026-10-26"
+        "at": "2026-11-02"
       }
     }
   },
-  "collectedAt": "2026-10-26"
+  "collectedAt": "2026-11-02"
 }
