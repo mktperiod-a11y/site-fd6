@@ -221,6 +221,25 @@ function arcPath(cx, cy, r, sweep) {
   return `M${x1} ${y1}A${r} ${r} 0 ${sweep > 180 ? 1 : 0} 1 ${x2} ${y2}`;
 }
 
+// An .ico file that wraps PNG frames: [size, png buffer] pairs.
+function icoFile(frames) {
+  const head = Buffer.alloc(6 + 16 * frames.length);
+  head.writeUInt16LE(1, 2);
+  head.writeUInt16LE(frames.length, 4);
+  let offset = head.length;
+  frames.forEach(([size, png], i) => {
+    const at = 6 + 16 * i;
+    head.writeUInt8(size % 256, at);
+    head.writeUInt8(size % 256, at + 1);
+    head.writeUInt16LE(1, at + 4);
+    head.writeUInt16LE(32, at + 6);
+    head.writeUInt32LE(png.length, at + 8);
+    head.writeUInt32LE(offset, at + 12);
+    offset += png.length;
+  });
+  return Buffer.concat([head, ...frames.map(([, png]) => png)]);
+}
+
 async function brand() {
   const site = readJSON('data/site.json');
   const mark = fs.readFileSync(path.join(ROOT, 'src/img/brand.svg'), 'utf8');
@@ -265,7 +284,11 @@ async function brand() {
   <g transform="scale(2.8125)">${markInner}</g>
 </svg>`;
   await sharp(Buffer.from(icon)).png({ compressionLevel: 9 }).toFile(path.join(STATIC, 'touch-icon.png'));
-  console.log('drew og.png and touch-icon.png');
+  // Search engines look for /favicon.ico and prefer square icons in multiples of 48px.
+  const markPng = (size) => sharp(Buffer.from(mark), { density: 72 * Math.ceil(size / 64) * 2 }).resize(size, size).png({ compressionLevel: 9 }).toBuffer();
+  await sharp(await markPng(192)).toFile(path.join(STATIC, 'favicon-192.png'));
+  fs.writeFileSync(path.join(STATIC, 'favicon.ico'), icoFile(await Promise.all([16, 32, 48].map(async (n) => [n, await markPng(n)]))));
+  console.log('drew og.png, touch-icon.png, favicon-192.png and favicon.ico');
 }
 
 const mode = process.argv[2] ?? 'all';

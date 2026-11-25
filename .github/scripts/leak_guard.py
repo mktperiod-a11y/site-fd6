@@ -136,6 +136,17 @@ def check_image_bytes(rel, data, ext):
         text = data.decode("utf-8", "replace")
         if re.search(r"<metadata|<!--|inkscape|sodipodi|adobe|illustrator|sketch|figma|rdf:|dc:", text, re.I):
             problems.append(f"{rel}: SVG metadata or editor traces")
+    elif ext == ".ico" and data[:4] == b"\x00\x00\x01\x00":
+        # Only icons that wrap PNG frames: each frame gets the PNG check above.
+        for i in range(int.from_bytes(data[4:6], "little")):
+            entry = data[6 + 16 * i:22 + 16 * i]
+            size = int.from_bytes(entry[8:12], "little")
+            offset = int.from_bytes(entry[12:16], "little")
+            frame = data[offset:offset + size]
+            if frame[:8] != b"\x89PNG\r\n\x1a\n":
+                problems.append(f"{rel}: icon frame {i} is not PNG")
+            else:
+                check_image_bytes(f"{rel}#{i}", frame, ".png")
     elif ext in {".avif", ".ico", ".jpg", ".jpeg"}:
         problems.append(f"{rel}: image type should be re-saved as webp or png")
 

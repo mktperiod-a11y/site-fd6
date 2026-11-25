@@ -301,6 +301,8 @@ function head(p) {
     p.canonical !== undefined ? '<meta property="og:image:width" content="1200">' : null,
     p.canonical !== undefined ? '<meta property="og:image:height" content="630">' : null,
     p.canonical !== undefined ? '<meta name="twitter:card" content="summary_large_image">' : null,
+    `<link rel="icon" href="${u('favicon.ico')}" sizes="16x16 32x32 48x48">`,
+    `<link rel="icon" href="${u('assets/favicon-192.png')}" type="image/png" sizes="192x192">`,
     `<link rel="icon" href="${u('favicon.svg')}" type="image/svg+xml">`,
     `<link rel="apple-touch-icon" href="${u('assets/touch-icon.png')}">`,
     ...[400, 600].map((w) => `<link rel="preload" href="${u(`assets/font/pretendard-${w}.woff2`)}" as="font" type="font/woff2" crossorigin>`),
@@ -1252,9 +1254,11 @@ files.set('favicon.svg', brandSvg);
 const staticDir = path.join(ROOT, 'src/static');
 for (const file of fs.existsSync(staticDir) ? fs.readdirSync(staticDir, { recursive: true }) : []) {
   const full = path.join(staticDir, file);
-  if (fs.statSync(full).isFile()) files.set(`assets/${file.split(path.sep).join('/')}`, fs.readFileSync(full));
+  if (!fs.statSync(full).isFile()) continue;
+  // favicon.ico belongs at the site root, where crawlers and browsers look for it.
+  files.set(file === 'favicon.ico' ? file : `assets/${file.split(path.sep).join('/')}`, fs.readFileSync(full));
 }
-for (const need of ['assets/og.png', 'assets/touch-icon.png']) {
+for (const need of ['assets/og.png', 'assets/touch-icon.png', 'assets/favicon-192.png', 'favicon.ico']) {
   if (!files.has(need)) fail(`${need} is missing; run node scripts/imagery.mjs brand`);
 }
 
