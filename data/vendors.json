@@ -5,7 +5,7 @@
     "playId": "com.ondisk.mobile4v18M", "appStoreId": "1536892993",
     "color": "#2563eb",
     "benefits": [
-      { "kind": "join", "text": "가입 1,000P" },
+      { "kind": "join", "text": "가입 10,000BP" },
       { "kind": "event", "text": "앱 설치 2,000P" }
     ]
   },
@@ -15,7 +15,7 @@
     "playId": "com.kdisk.mobileapp5", "appStoreId": "1492405942",
     "color": "#e11d48",
     "benefits": [
-      { "kind": "join", "text": "가입 1,000P" },
+      { "kind": "join", "text": "가입 10,000BP" },
       { "kind": "event", "text": "앱 설치 쿠폰 3장" }
     ]
   },
