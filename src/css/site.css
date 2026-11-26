@@ -1241,7 +1241,8 @@ ol {
 }
 
 .plain {
-  padding: var(--sp-7) 0;
+  padding-top: var(--sp-7);
+  padding-bottom: var(--sp-7);
 }
 
 .plain h1 {
@@ -1262,6 +1263,40 @@ ol {
   align-items: center;
   min-height: var(--tap);
   font-weight: 500;
+}
+
+/* Go pages: a quiet "moving" line; the help text appears only if the move takes a while. */
+.go-wait {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.go-spinner {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--outline-variant);
+  border-top-color: var(--primary);
+  border-radius: var(--r-pill);
+  animation: go-spin 0.8s linear infinite;
+}
+
+.go-later {
+  visibility: hidden;
+  animation: go-reveal 0s linear 3s forwards;
+}
+
+@keyframes go-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes go-reveal {
+  to {
+    visibility: visible;
+  }
 }
 
 @media (min-width: 640px) {
@@ -1528,7 +1563,8 @@ ol {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .live-dot {
+  .live-dot,
+  .go-spinner {
     animation: none;
   }
 
