@@ -1025,11 +1025,17 @@ function pageGo(it) {
   const digestB64 = crypto.createHash('sha256').update(script).digest('base64');
   const main = block([
     '<main id="main" class="wrap plain">',
-    `  <h1>${esc(v.name)} 공식 사이트로 이동하고 있어요</h1>`,
-    '  <p>화면이 그대로라면 브라우저에서 자바스크립트를 켠 뒤 다시 눌러 주세요.</p>',
-    '  <ul>',
-    `    <li><a href="${u('')}">이번 주 웹하드 순위로 돌아가기</a></li>`,
-    '  </ul>',
+    '  <div class="go-wait">',
+    '    <span class="go-spinner" aria-hidden="true"></span>',
+    `    <h1>${esc(josa(v.name, '으로/로'))} 이동 중이에요</h1>`,
+    '  </div>',
+    // Shown only if the move has not happened after a few seconds (or right away without JavaScript).
+    '  <div class="go-later">',
+    '    <p>화면이 그대로라면 브라우저에서 자바스크립트를 켠 뒤 다시 눌러 주세요.</p>',
+    '    <ul>',
+    `      <li><a href="${u('')}">이번 주 웹하드 순위로 돌아가기</a></li>`,
+    '    </ul>',
+    '  </div>',
     '</main>',
   ]);
   pages.push({

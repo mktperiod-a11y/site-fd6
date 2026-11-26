@@ -25,3 +25,12 @@
   padding: 0 var(--sp-2);
   border: 0;
 }
+
+.go-spinner {
+  display: none;
+}
+
+.go-later {
+  visibility: visible;
+  animation: none;
+}
