@@ -1,7 +1,7 @@
 [
   {
     "id": "ondisk", "name": "온디스크", "status": "active",
-    "url": "https://new.ondisk.co.kr/", "affiliateUrl": null,
+    "url": "https://new.ondisk.co.kr/", "affiliateUrl": "https://ondisk.co.kr/mbridge.php?iw=md&inpid=diskchart&j=2",
     "playId": "com.ondisk.mobile4v18M", "appStoreId": "1536892993",
     "color": "#2563eb",
     "benefits": [
@@ -11,7 +11,7 @@
   },
   {
     "id": "kdisk", "name": "케이디스크", "status": "active",
-    "url": "https://kdisk.co.kr/", "affiliateUrl": null,
+    "url": "https://kdisk.co.kr/", "affiliateUrl": "https://kdisk.co.kr/mbridge.php?iw=md&inpid=diskchart&j=2",
     "playId": "com.kdisk.mobileapp5", "appStoreId": "1492405942",
     "color": "#e11d48",
     "benefits": [
